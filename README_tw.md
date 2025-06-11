@@ -58,6 +58,7 @@
 
 | 類型         | 模型名稱              |
 |--------------|----------------------------------|
+| 文字轉影像     | realisticVisionV50_v40Bakedvae.safetensors   |
 | 臉部交換     | GFPGANv1.4.pth                |
 
 ---

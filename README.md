@@ -58,6 +58,7 @@ This workflow allows you to swap faces between two images, suitable for creative
 
 | Type           | Model Name         |
 |----------------|----------------------------------|
+| Text-to-Image    | realisticVisionV50_v40Bakedvae.safetensors   |
 | Face Swapping  | GFPGANv1.4.pth           |
 
 ---
