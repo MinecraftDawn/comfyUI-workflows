@@ -33,7 +33,7 @@
 |----------------|------------------------------------------------|
 | 文本轉圖模型   | `realisticVisionV50_v40Bakedvae.safetensors`   |
 | ControlNet     | `control_v11p_sd15_openpose.pth`               |
-| Upscaler 模型  | `4x-UltraSharp` 或 `BsrGAN_DF2K.pth`（視版本而定）|
+| Upscaler 模型  | `RealSR DF2K 4x`|
 
 ---
 
