@@ -1,46 +1,71 @@
-# 🧠 ComfyUI 高階圖像生成流程：文本 + ControlNet 姿勢 + 超解析
+# 🧠 進階 ComfyUI 工作流
 
-本專案為一個使用 ComfyUI所建立的高階 AI 圖像生成流程。結合了以下技術模組：
+本專案包含基於 ComfyUI 的進階 AI 影像生成工作流，目前包括：
 
-- Text-to-Image 文本生成圖像
-- ControlNet 姿勢控制
-- 高品質圖像超解析（Super Resolution）
-
-適合用於履歷作品展示、AI 人像生成創作或研究目的。
+- 文字 + ControlNet 姿勢 + 超解析度工作流
+- SwapFace 臉部交換工作流
 
 ---
 
-## 📌 功能特色
+## 目錄
 
-✅ 支援自然語言 Prompt 輸入  
-✅ 結合 ControlNet 姿勢圖控制輸出圖像姿勢  
-✅ 使用 Realistic Vision 模型生成寫實人像  
-✅ 輸出 768x768 圖像，並透過超解析升級至 3072x3072  
-✅ 支援 intermediate & final 圖像儲存
+- [文字 + ControlNet 姿勢 + 超解析度](#文字--controlnet-姿勢--超解析度)
+- [SwapFace 臉部交換工作流](#swapface-臉部交換工作流)
 
 ---
 
-## 🗂️ 範例流程圖 (Workflow)
+## 文字 + ControlNet 姿勢 + 超解析度
 
-![workflow-preview](./text_pose2img/workflow.png)  
-> 上圖為本 ComfyUI 範例流程，可視覺化圖像生成各階段。
+此工作流整合了文字生成、姿勢控制與高品質超解析度，適合作品集展示、AI 肖像創作或研究用途。
+
+### 特色
+
+- 支援自然語言提示輸入
+- 整合 ControlNet 姿勢圖像以引導輸出姿勢
+- 使用 Realistic Vision 模型產生寫實人像
+- 輸出影像為 768x768 並可放大至 3072x3072
+- 支援儲存中間與最終影像
+
+### 工作流範例
+
+![workflow-preview](./text_pose2img/workflow.png)
+
+### 使用模型
+
+| 類型           | 模型名稱                           |
+|----------------|----------------------------------------------|
+| 文字轉影像     | realisticVisionV50_v40Bakedvae.safetensors   |
+| ControlNet     | control_v11p_sd15_openpose.pth               |
+| 超解析度模型   | RealSR DF2K 4x                               |
 
 ---
 
-## 🔧 使用模型
+## SwapFace 臉部交換工作流
 
-| 類型           | 模型名稱                                       |
-|----------------|------------------------------------------------|
-| 文本轉圖模型   | `realisticVisionV50_v40Bakedvae.safetensors`   |
-| ControlNet     | `control_v11p_sd15_openpose.pth`               |
-| Upscaler 模型  | `RealSR DF2K 4x`|
+此工作流可將兩張圖片中的臉部進行交換，適合創意合成、肖像替換等應用。
+
+### 特色
+
+- 支援自訂來源與目標臉部圖片
+- 高品質臉部融合
+- 適用於肖像創作、趣味合成等
+
+### 工作流範例
+
+![swapface-workflow](./swapface/workflow.png)
+
+### 使用模型
+
+| 類型         | 模型名稱              |
+|--------------|----------------------------------|
+| 臉部交換     | GFPGANv1.4.pth                |
 
 ---
 
-## 🖼️ 圖像輸出說明
+## 輸出影像說明
 
-- 中間圖像（768x768）：用於預覽生成品質  
-- 最終輸出圖像（3072x3072）：經過超解析後產生的最終產出圖。
+- 中間影像（如 768x768）：用於預覽生成品質
+- 最終輸出影像（如 3072x3072）：經超解析度或臉部交換後產生
 
 ---
 
